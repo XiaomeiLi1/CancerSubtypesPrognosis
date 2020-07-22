@@ -1,0 +1,21 @@
+Package: CancerSubtypesPrognosis
+Type: Package
+Title: Cancer subtypes and prognosis based on multiple genomic data sets
+Version: 1.0.0
+Date: 2020-07-10
+Author: Xiaomei Li<xiaomei.li@mymail.unisa.edu.au> Taosheng Xu<taosheng.x@gmail.com>, Thuc Le<Thuc.Le@unisa.edu.au>
+Maintainer: Xiaomei Li<xiaomei.li@mymail.unisa.edu.au> 
+Depends: R (>= 3.6), sigclust, NMF, Biobase, stringr, genefu
+Imports: SNFtool, iCluster, cluster, impute, limma, CIMLR,
+        ConsensusClusterPlus, grDevices, survival, PINSPlus, breastCancerMAINZ, survcomp
+Encoding: UTF-8
+LazyData: TRUE
+Description: Breast cancer is an extremely complex disease. Accurate prognosis and identification of subtypes of breast cancer are important steps towards effective and personalised treatments. To this end, many computational methods have been developed to take advantage of a large amount of available transcriptomic data for breast cancer subtype discovery and prognosis. However, it raises challenges as to how and when to use these methods in practice. We create an R/Bioconductor package, CancerSubtypesPrognosis, to include all the 34 methods to facilitate the reproducibility of the methods and streamline the evaluation. We expect this work can provide biomedical researchers a practical guide to select the appropriate methods and a one-stop software tool to apply the methods to their breast cancer data. We also hope the work can help with the development of new computational methods for breast cancer subtyping and prognosis.
+License: GPL (>= 2)
+Suggests: BiocGenerics, RUnit, knitr, RTCGA.mRNA, RTCGA.clinical
+VignetteBuilder: knitr
+biocViews: Clustering, Software, Visualization, GeneExpression
+URL: https://github.com/XiaomeiLi1/CancerSubtypesPrognosis
+BugReports: https://github.com/XiaomeiLi1/CancerSubtypesPrognosis/issues
+RoxygenNote: 7.1.1
+NeedsCompilation: no
