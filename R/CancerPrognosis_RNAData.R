@@ -27,7 +27,7 @@
 #  \item \strong{Ensemble}: Ensemble calculates the average of predicted risk scores from 5 methods, GENIUS, EndoPredict, OncotypeDx, GENE70, and rorS. We chose these five methods because of their good performance.
 #  }
 #'  
-#'  @examples 
+#' @examples 
 #' library("breastCancerMAINZ")
 #' data("mainz")
 #' methods <- c("AURKA", "ESR1", "ERBB2", "GGI", "GENIUS", "Endopredict", "OncotypeDx", 

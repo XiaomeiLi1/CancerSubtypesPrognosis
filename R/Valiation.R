@@ -80,6 +80,35 @@ silhouette_SimilarityMatrix<-function(group, similarity_matrix)
   wds
 }
 
+#' get mean Silhouette from predicted subtypes
+#'
+#' @param group predicted subtypes of samples
+#' @param distanceMatrix A distace matrix of samples
+#' @return The mean Silhouette width
+#' @examples
+#' \dontrun{
+#' res = getMeanSilhouette(IC10_res$group, distanceMatrix)
+#' }
+#' 
+getMeanSilhouette <- function(group, distanceMatrix){
+  if(!is.null(distanceMatrix[1,1]))
+  {
+    #####
+    if(class(distanceMatrix)=="Similarity")
+    {
+      si=silhouette_SimilarityMatrix(group,distanceMatrix)
+    }
+    else
+    {
+      si=silhouette(group,distanceMatrix)
+    }
+  }
+  else {
+    cat("The distance Matrix is NULL.\n")
+    return(NULL)
+  }
+  return(mean(si[,"sil_width"]))
+}
 
 #' Survival analysis(Survival curves, Log-rank test) and compute Silhouette information for cancer subtypes
 #' 
@@ -191,7 +220,7 @@ survAnalysis<-function(mainTitle="Survival Analysis",time,status,group,distanceM
     {
       si=silhouette(group,distanceMatrix)
     }
-     
+    
     attr(distanceMatrix,'class')=NULL
     
     ind=order(group,-si[, "sil_width"])
@@ -212,6 +241,40 @@ survAnalysis<-function(mainTitle="Survival Analysis",time,status,group,distanceM
   p_value
 }
 
+#' get p-value of the Log-rank test from predicted subtypes
+#'
+#' @param time survival time of samples
+#' @param status event status of samples
+#' @param group predicted subtypes of samples
+#' @return The p-value of the Log-rank test
+#' @examples
+#' \dontrun{
+#' res = getPvalue(dclin[,1],dclin[,2],IC10_res$group)
+#' }
+#' 
+getPvalue<-function(time,status,group)
+{
+  mainTitle="Survival Analysis"
+  clusterNum=length(unique(group))
+  dataset=list(time,status,x=group)  
+  surv=survfit(Surv(time, status) ~ x,dataset)
+  if(clusterNum>1)
+  {
+    sdf=NULL
+    sdf=survdiff(Surv(time, status) ~ group)##log-rank test
+    cat("                                                     \n")
+    cat("*****************************************************\n")
+    cat(paste(mainTitle,"Cluster=",clusterNum,"  "))
+    print(sdf)
+    p_value=1 - pchisq(sdf$chisq, length(sdf$n) - 1)
+  }
+  else
+  {
+    cat("There is only one cluster in the group")
+    p_value=1
+  }
+  p_value
+}
 
 #' Generate heatmaps
 #' 
