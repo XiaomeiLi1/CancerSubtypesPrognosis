@@ -33,7 +33,7 @@ install.packages(c("devtools","SNFtool","iCluster", "PINSPlus", "iC10", "doParal
 library("devtools")
 install_github("danro9685/CIMLR", ref = 'R')
 
-devtools::install_github('XiaomeiLi1/CancerSubtypesPrognosis')
+install_github('XiaomeiLi1/CancerSubtypesPrognosis')
 ```
 
 5. Load CancerSubtypesPrognosis library
