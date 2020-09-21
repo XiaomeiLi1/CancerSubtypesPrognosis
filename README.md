@@ -27,7 +27,7 @@ BiocManager::install(c('limma', 'ConsensusClusterPlus', 'breastCancerMAINZ', 'su
 install.packages(c("devtools","SNFtool","iCluster", "PINSPlus", "iC10", "doParallel", "foreach"), dependencies = TRUE)
 ```
 
-4. Please install CancerSubtypesPrognosis and CIMILR package from github repository
+4. Please install CancerSubtypesPrognosis and CIMILR packages from github repository
 
 ```
 library("devtools")
@@ -37,7 +37,10 @@ devtools::install_github('XiaomeiLi1/CancerSubtypesPrognosis')
 ```
 
 5. Load CancerSubtypesPrognosis library
+
+```
 library("CancerSubtypesPrognosis")
+```
 
 ## Documentation
 Detailed information about the functions implemented in CancerSubtypesPrognosis can be found in the user [manual](https://github.com/XiaomeiLi1/CancerSubtypesPrognosis/blob/master/CancerSubtypesPrognosis_1.0.0.pdf)
