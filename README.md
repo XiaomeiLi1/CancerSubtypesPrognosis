@@ -18,7 +18,7 @@ BiocManager::install(version = "3.11")
 2. Please install Bioconductor dependencies required by CancerSubtypesPrognosis
 
 ```
-BiocManager::install(c('limma', 'ConsensusClusterPlus', 'breastCancerMAINZ', 'survcomp'))
+BiocManager::install(c('limma', 'ConsensusClusterPlus', 'survcomp'))
 ```
 
 3. Please install the devtools package and other dependencies required by CancerSubtypesPrognosis
@@ -49,5 +49,15 @@ Experiments implemented in our paper can be found in [inst/main_cancersubtypes.R
 
 ## Data
 The METABRIC data need to be download from the [EMBL-EBI repository](https://www.ebi.ac.uk/ega/) (accession number EGAS00000000083 and EGAS00000000122, require individual access agreement)
+
+Please install packages for datasets TRANSBIG, UNT, UPP, MAINZ, NKI, and load the packages into R
+```
+BiocManager::install(c('breastCancerTRANSBIG', 'breastCancerUNT', 'breastCancerUPP', 'breastCancerMAINZ', 'breastCancerNKI'))
+library(breastCancerTRANSBIG)
+library(breastCancerUNT)
+library(breastCancerUPP)
+library(breastCancerMAINZ)
+library(breastCancerNKI)
+```
 
 Please find the other datasets employed in our paper in the folder [data](https://github.com/XiaomeiLi1/CancerSubtypesPrognosis/tree/master/data)
