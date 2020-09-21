@@ -7,7 +7,7 @@ Breast cancer is an extremely complex disease. Accurate prognosis and identifica
 
 ## Installation
 CancerSubtypesPrognosis runs in the R statistical computing environment. R version 3.6.1 or higher and Bioconductor version 3.11 or higher are required.
-1. Please Install Bioconductor, you can use the following code in R
+1. Please install Bioconductor, you can use the following code in R
 
 ```
 if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -15,19 +15,19 @@ if (!requireNamespace("BiocManager", quietly = TRUE))
 BiocManager::install(version = "3.11")
 ```
 
-2. Install Bioconductor dependencies required by CancerSubtypesPrognosis
+2. Please install Bioconductor dependencies required by CancerSubtypesPrognosis
 
 ```
 BiocManager::install(c('limma', 'ConsensusClusterPlus', 'breastCancerMAINZ', 'survcomp'))
 ```
 
-3. Please Install the devtools package, you can use the following code in R
+3. Please install the devtools package and other dependencies required by CancerSubtypesPrognosis
 
 ```
 install.packages(c("devtools","SNFtool","iCluster", "PINSPlus", "iC10", "doParallel", "foreach"), dependencies = TRUE)
 ```
 
-4. Install CancerSubtypesPrognosis and CIMILR package from github repository
+4. Please install CancerSubtypesPrognosis and CIMILR package from github repository
 
 ```
 library("devtools")
