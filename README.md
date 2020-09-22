@@ -60,4 +60,6 @@ library(breastCancerMAINZ)
 library(breastCancerNKI)
 ```
 
+Please download the GSE6532 dataset [here](https://github.com/XiaomeiLi1/CancerSubtypesPrognosis/releases/tag/V1.0)
+
 Please find the other datasets employed in our paper in the folder [data](https://github.com/XiaomeiLi1/CancerSubtypesPrognosis/tree/master/data)
