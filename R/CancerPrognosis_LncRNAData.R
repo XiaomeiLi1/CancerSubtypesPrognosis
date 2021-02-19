@@ -3,7 +3,7 @@
 #' Cancer Prognosis to compute the risk scores for long non-coding RNA data based on the 6 methods: "HOTAIR", "MALAT1", "DSCAM-AS1",
 #'            "lncRNA5","lncRNA6","lncRNA12".
 #' @param data data to be computed for cancer Prognosis risk scores; either a data matrix or ExpressionSet object. 
-#' If it is a data matrix, rows= lncRNAs annotated with gene gene symbols and columns=tems/samples .  
+#' If it is a data matrix, rows= lncRNAs annotated with lncRNA symbols and columns=tems/samples .  
 #' @param methods A set of methods to be performed in the 6 methods:"HOTAIR", "MALAT1", "DSCAM-AS1", "lncRNA5","lncRNA6","lncRNA12".
 #' @examples 
 #' data(TCGA500)
@@ -18,7 +18,7 @@
 #'  \item \strong{DSCAM-AS1}: Niknafs YS, Han S, Ma T, Speers C, Zhang C, Wilder-Romans K, et al. The lncRNA landscape of breast cancer reveals a role for DSCAM-AS1 in breast cancer progression. Nature communications. 2016;7:12791.
 #'  \item \strong{lncRNA12}: Zhou M, Zhong L, Xu W, Sun Y, Zhang Z, Zhao H, et al. Discovery of potential prognostic long non-coding RNA biomarkers for predicting the risk of tumor recurrence of breast cancer patients. Scientific reports. 2016;6:31038.
 #'  \item \strong{lncRNA6}: Zhong L, Lou G, Zhou X, Qin Y, Liu L, Jiang W. A six-long non-coding RNAs signature as a potential prognostic marker for survival prediction of ER-positive breast cancer patients. Oncotarget. 2017;8(40):67861.
-#'  \item \strong{lncRNA5}: Li J, Wang W, Xia P, Wan L, Zhang L, Yu L, et al. Identification of a five-lncRNA signature for predicting the risk of tumor recurrence in breast cancer patients. International journal of cancer. 2018;.
+#'  \item \strong{lncRNA5}: Li J, Wang W, Xia P, Wan L, Zhang L, Yu L, et al. Identification of a five-lncRNA signature for predicting the risk of tumor recurrence in breast cancer patients. International journal of cancer. 2018.
 #'  }
 #'  
 #' @export

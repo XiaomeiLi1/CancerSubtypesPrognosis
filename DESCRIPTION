@@ -1,9 +1,11 @@
 Package: CancerSubtypesPrognosis
 Type: Package
 Title: Cancer subtypes and prognosis based on multiple genomic data sets
-Version: 1.0.0
-Date: 2020-07-10
-Author: Xiaomei Li<xiaomei.li@mymail.unisa.edu.au> Taosheng Xu<taosheng.x@gmail.com>, Thuc Le<Thuc.Le@unisa.edu.au>
+Version: 1.0.2
+Date: 2021-02-19
+Author: Xiaomei Li<xiaomei.li@mymail.unisa.edu.au> 
+        Taosheng Xu<taosheng.x@gmail.com>
+        Thuc Le<Thuc.Le@unisa.edu.au>
 Maintainer: Xiaomei Li<xiaomei.li@mymail.unisa.edu.au> 
 Depends: R (>= 3.6), sigclust, NMF, Biobase, stringr, genefu 
 Imports: SNFtool, iCluster, cluster, impute, limma, CIMLR,

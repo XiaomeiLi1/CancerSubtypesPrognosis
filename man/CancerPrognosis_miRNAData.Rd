@@ -9,25 +9,25 @@ CancerPrognosis_miRNAData(data, methods)
 \arguments{
 \item{data}{data to be computed for Cancer Prognosis risk scores; either a data matrix or ExpressionSet object. If it is a data matrix, rows= miRNAs and columns=terms/samples .}
 
-\item{methods}{A set of methods to be performed in the 4 methods: "hsa-miR-210", "hsa-miR-155", "hsa-miR-335", "miRNA10"}
+\item{methods}{A set of methods to be performed in the 4 methods: "hsa-miR-21", "hsa-miR-155", "hsa-miR-210", "miRNA10"}
 }
 \value{
 A dataframe object with rows for samples and columns which represent dataset used and its corresponding methods
 }
 \description{
 Cancer Prognosis to compute the risk scores for miRNA RNA expression data based on existing 4 methods: 
-           "hsa-miR-210", "hsa-miR-155", "hsa-miR-335", "miRNA10"
+           "hsa-miR-21", "hsa-miR-155", "hsa-miR-210", "miRNA10"
 }
 \examples{
 data(TCGA500)
-methods <- c("hsa-miR-210", "hsa-miR-155", "hsa-miR-335", "miRNA10")
+methods <- c("hsa-miR-21", "hsa-miR-155", "hsa-miR-210", "miRNA10")
 res = CancerPrognosis_miRNAData(data=TCGA500, methods=methods)
 }
 \references{
 \itemize{
- \item \strong{hsa-miR-210}: Lee JA, Lee HY, Lee ES, Kim I, Bae JW. Prognostic implications of microRNA-21 overexpression in invasive ductal carcinomas of the breast. Journal of breast cancer. 2011;14(4):269-275. Yan LX, Huang XF, Shao Q, Huang MY, Deng L, Wu QL, et al. MicroRNA miR-21 overexpression in human breast cancer is associated with advanced clinical stage, lymph node metastasis and patient poor prognosis. Rna. 2008;. Markou A, Yousef GM, Stathopoulos E, Georgoulias V, Lianidou E. Prognostic significance of metastasis-related microRNAs in early breast cancer patients with a long follow-up. Clinical chemistry. 2013; p. clinchem-2013.
+ \item \strong{hsa-miR-21}: Lee JA, Lee HY, Lee ES, Kim I, Bae JW. Prognostic implications of microRNA-21 overexpression in invasive ductal carcinomas of the breast. Journal of breast cancer. 2011;14(4):269-275. Yan LX, Huang XF, Shao Q, Huang MY, Deng L, Wu QL, et al. MicroRNA miR-21 overexpression in human breast cancer is associated with advanced clinical stage, lymph node metastasis and patient poor prognosis. Rna. 2008;. Markou A, Yousef GM, Stathopoulos E, Georgoulias V, Lianidou E. Prognostic significance of metastasis-related microRNAs in early breast cancer patients with a long follow-up. Clinical chemistry. 2013; p. clinchem-2013.
  \item \strong{hsa-miR-155}: Gasparini P, Cascione L, Fassan M, Lovat F, Guler G, Balci S, et al. microRNA expression profiling identifies a four microRNA signature as a novel diagnostic and prognostic biomarker in triple negative breast cancers. Oncotarget. 2014;5(5):1174.
- \item \strong{hsa-miR-335}: Andorfer CA, Necela BM, Thompson EA, Perez EA. MicroRNA signatures: clinical biomarkers for the diagnosis and treatment of breast cancer. Trends in molecular medicine. 2011;17(6):313-319.
+ \item \strong{hsa-miR-210}: Camps C, Buffa FM, Colella S, Moore J, Sotiriou C, Sheldon H, et al. hsa-miR-210 Is induced by hypoxia and is an independent prognostic factor in breast cancer. Clin Cancer Res. 2008;14(5):1340-1348. Wang J, Zhao J, Shi M, Ding Y, Sun H, Yuan F, et al. Elevated expression of miR-210 predicts poor survival of cancer patients: a systematic review and meta-analysis. PLoS One. 2014;9(2):e89223.
  \item \strong{miRNA10}: Buffa FM, Camps C, Winchester L, Snell CE, Gee HE, Sheldon H, et al. microRNA associated progression pathways and potential therapeutic targets identified by integrated mRNA and microRNA expression profiling in breast cancer. Cancer research. 2011; p. canres-0489.
 }
 }

@@ -674,3 +674,4 @@ for(i in 1:(ncol(x2)-1))
 {
   A = c(A, wilcox.test(x2[,i+1], x2[,1], alternative = "greater")$p.value)
 }
+

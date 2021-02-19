@@ -149,7 +149,7 @@ ExecuteCC<-function(clusterNum,
 #'  
 #' @details 
 #'  For iCluster algorithm, it cannot process high-dimensional data, otherwise it is very very time-consuming or reports a mistake.  
-#'  Based on test, it could smoothly run for the matrix with around 1500 features. Normally it need feature selection step first to reduce feature number.
+#'  Based on test, it could smoothly run for the matrix with around 2000 features. Normally it need feature selection step first to reduce feature number.
 #' @references
 #' Ronglai Shen, Adam Olshen, Marc Ladanyi. (2009). Integrative clustering of multiple genomic data types using a joint latent variable model with application to breast and lung cancer subtype analysis. Bioinformatics 25, 2906-2912.\cr
 #' Ronglai Shen, Qianxing Mo, Nikolaus Schultz, Venkatraman E. Seshan, Adam B. Olshen, Jason Huse, Marc Ladanyi, Chris Sander. (2012). Integrative Subtype Discovery in Glioblastoma Using iCluster. PLoS ONE 7, e35236
@@ -617,6 +617,7 @@ ExecutePAM50<-function(datasets)
 
 #' Execute IntClust
 #' IntClust is a integrative method to classify samples to ten breast cancer subtypes. 
+#' 
 #' IntClust applies iCluster on a matched mRNA-CNV breast cancer dataset with 997 samples and identifies ten breast cancer subtypes (so-called integrative subtypes). Similar to PAM50, IntClust builds three centroid-based predictors based on 612 cis-eQTLs gene drivers by using PAM.
 #' The R package "genefu" should be installed. 
 #' 

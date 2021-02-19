@@ -1,7 +1,8 @@
 #' Evaluate Cancer CancerSubtyping methods of mRNA, miRNA or multiomics data based on the running time, the average Silhouette score, and the p-value of Logrank test
 #' 
-#' CancerSubtypes to compute the running time, the average Silhouette score, and the p-value of Logrank test for mRNA, miRNA or multiomics data based on existing 11 methods: 
-#'            "PAM50","IntClust","CC","CNMF","iCluster","SNF","SNF-CC","WSNF","CIMLR","PINS","NEMO"
+#' CancerSubtypes to compute the running time, the average Silhouette score, and the p-value of 
+#' Logrank test for mRNA, miRNA or multiomics data based on existing 11 methods: 
+#' "PAM50","IntClust","CC","CNMF","iCluster","SNF","SNF-CC","WSNF","CIMLR","PINS","NEMO"
 #' @import genefu   
 #' @import  ConsensusClusterPlus
 #' @import iCluster
@@ -14,7 +15,8 @@
 #' @importFrom  iC10 matchFeatures
 #' @param dn datasets to be computed for cancer subtypes; a string vector. 
 #' @param omics The types of data, "mRNA" or "miRNA" or "multiomics". 
-#' @param methods A set of methods to be performed in the 11 methods: "PAM50","IntClust","CC","CNMF","iCluster","SNF","SNF-CC","WSNF","CIMLR","PINS","NEMO".
+#' @param methods A set of methods to be performed in the 11 methods: "PAM50","IntClust","CC","CNMF",
+#' "iCluster","SNF","SNF-CC","WSNF","CIMLR","PINS","NEMO".
 #' @param fileFolder A file folder name provided for saving results. 
 #' @param logFile A file name provided for saving log information. 
 #' 

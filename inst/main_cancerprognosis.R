@@ -10,7 +10,7 @@ dn = c("transbig", "unt", "upp", "mainz", "nki","GSE6532", "GEO", "TCGA753", "TC
        "METABRIC", "UK", "HEL", "GSE19783")
 mRNA_methods <- c("AURKA", "ESR1", "ERBB2", "GGI", "GENIUS", "Endopredict", "OncotypeDx",
                   "TAMR13", "PIK3CAGS", "GENE70", "rorS", "Ensemble", "RNAmodel")
-miRNA_methods <- c("hsa-miR-210", "hsa-miR-155", "hsa-miR-335", "miRNA10")
+miRNA_methods <- c("hsa-miR-21", "hsa-miR-155", "hsa-miR-210", "miRNA10")
 lncRNA_methods <- c("HOTAIR", "MALAT1", "DSCAM-AS1", "lncRNA12","lncRNA6","lncRNA5")
 
 resMatrix <- as.list(NULL)
@@ -27,7 +27,7 @@ save(resMatrix, file = "resMatrix.rda")
 
 ###calculate C-index
 riskPList = c("AURKA", "ESR1", "ERBB2", "GGI", "GENIUS", "Endopredict", "OncotypeDx", "TAMR13",
-              "PIK3CAGS", "GENE70", "rorS", "Ensemble","RNAmodel","miR-210","miR-155","miR-335",
+              "PIK3CAGS", "GENE70", "rorS", "Ensemble","RNAmodel","miR-21","miR-155","miR-210",
               "miRNA10","HOTAIR","MALAT1","DSCAM-AS1","lncRNA12","lncRNA6","lncRNA5")
 ciMatrix <- as.list(NULL)
 
@@ -494,7 +494,7 @@ layout(mat = layout.matrix,
 layout.show()
 
 #stPV = formatC(printPV, format = "e", digits = 2)
-metaplot.surv.xm(mn=r.mean, lower=r.lower, upper=r.upper, labels=labeltext, pvalue = stPV[1:23], xlim=c(0.3,0.8),
+metaplot.surv(mn=r.mean, lower=r.lower, upper=r.upper, labels=labeltext, pvalue = stPV[1:23], xlim=c(0.3,0.8),
                  boxsize=0.5, zero=0.5, cex = 0.8,
                  col=meta.colors(box="royalblue",line="darkblue",zero="firebrick"))
 dev.off()

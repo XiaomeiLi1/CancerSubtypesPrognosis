@@ -11,7 +11,9 @@
 #' res =  RNAmodel(data,annot)
 #' @details
 #' The 7 miRNAs signatures are  "hsa-miR-103", "hsa-miR-1307", "hsa-miR-148b", "hsa-miR-328", "hsa-miR-484", "hsa-miR-874","hsa-miR-93".
-#' The 30 mRNA signatures are "ACSL1" ,"ADAT1", "ANKRD52","BIRC6", "CPT1A", "CXCR7","DAAM1", "DIP2B", "FAM199X", "FAM91A1", "FRZB",  "GLA",  "GMCL1", "HRASLS",  "HSP90AA1", "MCM10", "ME1",  "NDRG1", "NOTCH2NL","OTUD6B","PDSS2", "PGK1",  "PIK3CA", "PTAR1", "SMG1",  "TRIM23", "TTC3",  "UBR5",  "UBXN7", "ZFC3H1".
+#' The 30 mRNA signatures are "ACSL1" ,"ADAT1", "ANKRD52","BIRC6", "CPT1A", "CXCR7","DAAM1", "DIP2B", "FAM199X", "FAM91A1", 
+#' "FRZB",  "GLA",  "GMCL1", "HRASLS",  "HSP90AA1", "MCM10", "ME1",  "NDRG1", 
+#' "NOTCH2NL","OTUD6B","PDSS2", "PGK1",  "PIK3CA", "PTAR1", "SMG1",  "TRIM23", "TTC3",  "UBR5",  "UBXN7", "ZFC3H1".
 #' Note that the miRbase version of miRNAs signatures is v16, please check the miRbase version of your own dataset.
 #' @return 
 #' A Numeric Vector

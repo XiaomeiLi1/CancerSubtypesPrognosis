@@ -33,11 +33,10 @@
 #' methods <- c("AURKA", "ESR1", "ERBB2", "GGI", "GENIUS", "Endopredict", "OncotypeDx", 
 #'             "TAMR13", "PIK3CAGS", "GENE70", "rorS", "RNAmodel", "Ensemble")
 #' res = CancerPrognosis_RNAData(data=mainz, platform="custom", methods=methods)
-
+#'
 #' @export
 #' 
 #' 
-# @param do.mapping This a same parameter as in sig.score. TRUE if the mapping through Entrez Gene ids must be performed (in case of ambiguities, the most variant probe is kept for each gene), FALSE otherwise. default = "FALSE"
 CancerPrognosis_RNAData <- function(data, platform="custom", methods, RNASig=NULL) 
 {
   #data(genefu::scmgene.robust)
@@ -63,6 +62,9 @@ CancerPrognosis_RNAData <- function(data, platform="custom", methods, RNASig=NUL
       ddata = t(data)
       dannot = data.frame("EntrezGene.ID"=colnames(ddata)) 
     }
+    
+    # do.mapping TRUE if the mapping through Entrez Gene ids must be performed (in case of ambiguities, the most variant probe is kept for each gene), FALSE otherwise. default = "FALSE"
+    
     do.mapping = ifelse(platform == "affy", FALSE, TRUE)
     
     ## 1. AURKA
