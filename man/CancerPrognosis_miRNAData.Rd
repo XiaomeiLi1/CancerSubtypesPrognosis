@@ -7,9 +7,9 @@
 CancerPrognosis_miRNAData(data, methods)
 }
 \arguments{
-\item{data}{data to be computed for Cancer Prognosis risk scores; either a data matrix or ExpressionSet object. If it is a data matrix, rows= miRNAs and columns=terms/samples .}
+\item{data}{data to be computed for Cancer Prognosis risk scores; either a data matrix or ExpressionSet object. If it is a data matrix, rows= miRNAs and columns=terms/samples.}
 
-\item{methods}{A set of methods to be performed in the 4 methods: "hsa-miR-21", "hsa-miR-155", "hsa-miR-210", "miRNA10"}
+\item{methods}{A set of methods to be performed in the 4 methods: "hsa-miR-21", "hsa-miR-155", "hsa-miR-210", "miRNA10".}
 }
 \value{
 A dataframe object with rows for samples and columns which represent dataset used and its corresponding methods

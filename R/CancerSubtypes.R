@@ -369,6 +369,20 @@ CancerSubtypes <- function(dn = NULL, omics = NULL, methods = NULL,
       cat("finish NEMO.\n")
     }
     
+    ####intNMF
+    if ("intNMF" %in% methods) {
+      cat("run intNMF ...\n")
+      intNMF_res=ExecuteintNMF(datasets=data,clusterNum=5)
+      fpath = getFilePath(fileFolder, paste(i,"intNMF",sep = "_"))
+      save(intNMF_res, file = fpath)
+      
+      timeTable[i,"intNMF"] = intNMF_res$timing
+      silTable[i,"intNMF"] = getMeanSilhouette(intNMF_res$group, intNMF_res$distanceMatrix)
+      pvalueTable[i,"intNMF"] = getPvalue(dclin[,1],dclin[,2],intNMF_res$group)
+      
+      cat("finish intNMF\n")
+    }
+    
     fpath = getFilePath(fileFolder, paste0("timeTable",".csv"))
     write.csv(timeTable, file = fpath)
     

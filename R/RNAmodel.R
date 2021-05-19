@@ -123,6 +123,7 @@ miRNA10model <- function(data,annot,RNASignature=NULL)
 #' @param data data to be computed for cancer Prognosis risk scores; a data matrix, rows= lncRNA annotated with lncRNA names and columns=terms/samples.
 #' @param annot annot holds RNA names in the data.
 #' @param RNASignature RNA signatures, if none, will import the 12 lncRNA signatures.
+#' @param do.mapping if do.mapping equals Ture, use probe IDs instead of gene symbols.
 #' @examples 
 #' data(TCGA500)
 #' data = exprs(TCGA500) 
@@ -138,7 +139,7 @@ miRNA10model <- function(data,annot,RNASignature=NULL)
 #' }
 #' @export
 #' 
-lncRNA12model <- function(data,annot,RNASignature=NULL) #"TCGA500"
+lncRNA12model <- function(data,annot,RNASignature=NULL, do.mapping = FALSE) #"TCGA500"
 {
   if(is.null(RNASignature))
   {
@@ -150,7 +151,10 @@ lncRNA12model <- function(data,annot,RNASignature=NULL) #"TCGA500"
   tdata = NULL
   SigW = NULL
   for(j in 1:nrow(lncRNA12)) {
-    index = which(annot$Gene.symbol %in% lncRNA12$Gene.symbol[j])
+    if(do.mapping) index = which(annot$probe %in% lncRNA12$probe[j])
+    else {
+      index = which(annot$Gene.symbol %in% lncRNA12$Gene.symbol[j])
+    }
     if(length(index)!=0) {
       ## Merge the same probles of RNAs with average value
       if (length(index)>1) 
@@ -179,6 +183,7 @@ lncRNA12model <- function(data,annot,RNASignature=NULL) #"TCGA500"
 #' @param data data to be computed for cancer Prognosis risk scores; a data matrix, rows= lncRNA annotated with lncRNA names and columns=terms/samples.
 #' @param annot annot holds RNA names in the data.
 #' @param RNASignature RNA signatures, if none, will import the 5 lncRNA signatures.
+#' @param do.mapping if do.mapping equals Ture, use probe IDs instead of gene symbols.
 #' @examples 
 #' data(TCGA500)
 #' data = exprs(TCGA500) 
@@ -194,7 +199,7 @@ lncRNA12model <- function(data,annot,RNASignature=NULL) #"TCGA500"
 #' }
 #' @export
 #' 
-lncRNA5model <- function(data,annot,RNASignature=NULL)
+lncRNA5model <- function(data,annot,RNASignature=NULL, do.mapping = FALSE)
 {
   if(is.null(RNASignature))
   {
@@ -206,7 +211,10 @@ lncRNA5model <- function(data,annot,RNASignature=NULL)
   tdata = NULL
   SigW = NULL
   for(j in 1:nrow(lncRNA5)) {
-    index = which(annot$Gene.symbol %in% lncRNA5$Gene.symbol[j])
+    if (do.mapping) index = which(annot$probe %in% lncRNA5$probe[j])
+    else {
+      index = which(annot$Gene.symbol %in% lncRNA5$Gene.symbol[j])
+    }
     if(length(index)!=0) {
       ## Merge the same probles of RNAs with average value
       if (length(index)>1) 
@@ -235,6 +243,7 @@ lncRNA5model <- function(data,annot,RNASignature=NULL)
 #' @param data data to be computed for cancer Prognosis risk scores; a data matrix, rows= lncRNA annotated with lncRNA names and columns=terms/samples.
 #' @param annot annot holds RNA names in the data.
 #' @param RNASignature RNA signatures, if none, will import the 6 lncRNA signatures.
+#' @param do.mapping if do.mapping equals Ture, use probe IDs instead of gene symbols.
 #' @examples 
 #' data(TCGA500)
 #' data = exprs(TCGA500) 
@@ -250,7 +259,7 @@ lncRNA5model <- function(data,annot,RNASignature=NULL)
 #' }
 #' @export
 #' 
-lncRNA6model <- function(data,annot,RNASignature=NULL)
+lncRNA6model <- function(data,annot,RNASignature=NULL, do.mapping = FALSE)
 {
   if(is.null(RNASignature))
   {
@@ -262,7 +271,10 @@ lncRNA6model <- function(data,annot,RNASignature=NULL)
   tdata = NULL
   SigW = NULL
   for(j in 1:nrow(lncRNA6)) {
-    index = which(annot$Gene.symbol %in% lncRNA6$Gene.symbol[j])
+    if(do.mapping) index = which(annot$probe %in% lncRNA6$probe[j])
+    else {
+      index = which(annot$Gene.symbol %in% lncRNA6$Gene.symbol[j])
+    }
     if(length(index)!=0) {
       ## Merge the same probles of RNAs with average value
       if (length(index)>1) 

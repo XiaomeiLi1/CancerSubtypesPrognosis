@@ -3,9 +3,7 @@
 \name{ExecuteIntClust}
 \alias{ExecuteIntClust}
 \title{Execute IntClust
-IntClust is a integrative method to classify samples to ten breast cancer subtypes. 
-IntClust applies iCluster on a matched mRNA-CNV breast cancer dataset with 997 samples and identifies ten breast cancer subtypes (so-called integrative subtypes). Similar to PAM50, IntClust builds three centroid-based predictors based on 612 cis-eQTLs gene drivers by using PAM.
-The R package "genefu" should be installed.}
+IntClust is a integrative method to classify samples to ten breast cancer subtypes.}
 \usage{
 ExecuteIntClust(datasets)
 }
@@ -25,8 +23,6 @@ A list with the following elements.
  }
 }
 \description{
-Execute IntClust
-IntClust is a integrative method to classify samples to ten breast cancer subtypes. 
 IntClust applies iCluster on a matched mRNA-CNV breast cancer dataset with 997 samples and identifies ten breast cancer subtypes (so-called integrative subtypes). Similar to PAM50, IntClust builds three centroid-based predictors based on 612 cis-eQTLs gene drivers by using PAM.
 The R package "genefu" should be installed.
 }

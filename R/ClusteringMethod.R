@@ -892,3 +892,73 @@ ExecuteNEMO<-function(datasets, clusterNum, num.neighbors=50,plot=TRUE)
   result=list(group=group,distanceMatrix=distanceMatrix,timing=time.taken)
   result
 }
+
+
+
+#' Execute intNMF (an integrative approach for cancer subtype classification based on non-negative matrix factorization)
+#'
+#' intNMF is an integrative approach for cancer subtype classification based on non-negative matrix factorization.
+#' 
+#' The R package "IntNMF" should be installed. 
+#' 
+#' @importFrom IntNMF nmf.mnnals
+#' @param datasets A data matrix or a list containing data matrices. For each data matrix, the rows represent genomic features, and the columns represent samples.
+#'  
+#' 
+#' @param clusterNum Number of subtypes for the samples
+#' @param maxiter Maximum number of iteration, default is 150.
+#' @param st.count Count for stability in connectivity matrix, default is 20.
+#' @param n.ini Number of initializations of the random matrices, default is 15.
+#' @param plot Logical value. If true, draw the heatmap for the distance matrix with samples ordered to form clusters.
+#' @return 
+#' A list with the following elements.
+#'\itemize{
+#'  \item \strong{group} : A vector represent the group of cancer subtypes. The order is corresponding to the the samples in the data matrix.\cr
+#'   
+#'   This is the most important result for all clustering methods, so we place it as the first component. The format of group 
+#'   is consistent across different algorithms and therefore makes it convenient for downstream analyses. Moreover, the format
+#'   of group is also compatible with the K-means result and the hclust (after using the cutree() function).
+#'   
+#'  \item \strong{distanceMatrix} : It is a sample similarity matrix. The more large value between samples in the matrix, the more similarity the samples are.
+#'   
+#'   We extracted this matrix from the algorithmic procedure because it is useful for similarity analysis among the samples based on the clustering results.
+#'   
+#'  \item \strong{timing} : The running time.
+#'  }
+#'  
+#' @details
+#'  If the data is a list containing the matched mutli-genomics data matrices like the input as "ExecuteiCluster()" and "ExecuteSNF()",
+#'   The data matrices in the list are concatenated according to samples. The concatenated data matrix is the samples with a long features (all features in the data list).
+#'   Our purpose is to make convenient comparing the different method with same dataset format. See examples.
+
+#' @references
+#' Chalise, Prabhakar, and Brooke L. Fridley. "Integrative clustering of multi-level ‘omic data based on non-negative matrix factorization algorithm." PloS one 12.5 (2017): e0176278.
+#' @examples
+#' data(GeneExp)
+#' result=ExecuteintNMF(list(GeneExp),clusterNum=3)
+#' result$group
+#' 
+#' @export
+#'
+ExecuteintNMF<-function(datasets, clusterNum, maxiter=150, st.count=20, n.ini=15, plot=TRUE)
+{
+  start = Sys.time()
+  #A single data or a list of multiple data matrices measured on same set of samples. 
+  #For each data matrix in the list, samples should be on rows and genomic features should be on columns.
+  for(i in 1:length(datasets)) {
+    datasets[[i]] = t(apply(datasets[[i]], 2, rescale))
+    #datasets[[i]] = t(datasets[[i]])
+  }
+  res = nmf.mnnals(dat = datasets, k=clusterNum, 
+                   maxiter= maxiter, st.count = st.count, n.ini = n.ini)
+  group =as.numeric(res$clusters)
+  
+  distanceMatrix=res$consensus
+  attr(distanceMatrix,'class')="Similarity"
+  
+  if(plot)
+    displayClusters(distanceMatrix, group)
+  time.taken = as.numeric(Sys.time() - start, units='secs')
+  result=list(group=group,distanceMatrix=distanceMatrix,timing=time.taken)
+  result
+}

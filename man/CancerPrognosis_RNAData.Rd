@@ -24,10 +24,12 @@ Cancer Prognosis to compute the risk scores for coding RNA expression data based
            "AURKA", "ESR1", "ERBB2", "GGI", "GENIUS", "Endopredict", "OncotypeDx","TAMR13", "PIK3CAGS", "GENE70", "rorS", "RNAmodel","Ensemble"
 }
 \examples{
+\dontrun{
 library("breastCancerMAINZ")
 data("mainz")
 methods <- c("AURKA", "ESR1", "ERBB2", "GGI", "GENIUS", "Endopredict", "OncotypeDx", 
             "TAMR13", "PIK3CAGS", "GENE70", "rorS", "RNAmodel", "Ensemble")
 res = CancerPrognosis_RNAData(data=mainz, platform="custom", methods=methods)
+}
 
 }

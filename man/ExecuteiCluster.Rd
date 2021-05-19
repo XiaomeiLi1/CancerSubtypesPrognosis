@@ -56,7 +56,7 @@ We try to build a standardized flow for cancer subtypes analysis and validation.
 }
 \details{
 For iCluster algorithm, it cannot process high-dimensional data, otherwise it is very very time-consuming or reports a mistake.  
- Based on test, it could smoothly run for the matrix with around 1500 features. Normally it need feature selection step first to reduce feature number.
+ Based on test, it could smoothly run for the matrix with around 2000 features. Normally it need feature selection step first to reduce feature number.
 }
 \examples{
 data(GeneExp)

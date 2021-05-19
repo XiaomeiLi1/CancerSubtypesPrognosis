@@ -5,7 +5,7 @@
 \title{Evaluate Cancer Prognosis based on 12 lncRNA signatures
 Cancer Prognosis to compute the risk scores for lncRNA data based on 12 lncRNA signatures}
 \usage{
-lncRNA12model(data, annot, RNASignature = NULL)
+lncRNA12model(data, annot, RNASignature = NULL, do.mapping = FALSE)
 }
 \arguments{
 \item{data}{data to be computed for cancer Prognosis risk scores; a data matrix, rows= lncRNA annotated with lncRNA names and columns=terms/samples.}
@@ -13,6 +13,8 @@ lncRNA12model(data, annot, RNASignature = NULL)
 \item{annot}{annot holds RNA names in the data.}
 
 \item{RNASignature}{RNA signatures, if none, will import the 12 lncRNA signatures.}
+
+\item{do.mapping}{if do.mapping equals Ture, use probe IDs instead of gene symbols.}
 }
 \value{
 A Numeric Vector

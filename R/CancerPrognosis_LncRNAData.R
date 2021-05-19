@@ -8,7 +8,7 @@
 #' @examples 
 #' data(TCGA500)
 #' methods <- c("HOTAIR", "MALAT1", "DSCAM-AS1", "lncRNA12","lncRNA6","lncRNA5")
-#' res = CancerPrognosis_LncRNAData(data=TCGA500, methods=methods)
+#' res = CancerPrognosis_LncRNAData(data=TCGA500, platform="custom", methods=methods)
 #' @return 
 #' A dataframe object with rows for samples and columns which represent dataset used and its corresponding methods
 #' @references 
@@ -25,7 +25,7 @@
 
 # @param RNASig A dataframe represnts the customized Signatures provided for the LncRNAmodel methods. The columns should include "Ensembl.ID",  "Gene.symbol", "weight". Default NULL, the "lncRNA5model","lncRNA6model","lncRNA12model" methods will use the default Signature sets. 
 
-CancerPrognosis_LncRNAData <- function(data,methods) 
+CancerPrognosis_LncRNAData <- function(data,platform="custom",methods) 
 {
   ## data loading
   res = NULL
@@ -48,6 +48,8 @@ CancerPrognosis_LncRNAData <- function(data,methods)
       ddata = t(data)
       dannot = data.frame("Gene.symbol"=colnames(ddata)) 
     }
+    
+    do.mapping = ifelse(platform == "affy", TRUE, FALSE)
     
     ## 1. HOTAIR
     if ("HOTAIR" %in% methods) {
@@ -108,7 +110,7 @@ CancerPrognosis_LncRNAData <- function(data,methods)
     ## 4. lncRNA12model
     if ("lncRNA12" %in% methods) {
       cat("Processing on lncRNA12 model.... \n")
-      tmp1 = tryCatch({as.matrix(lncRNA12model(data=t(ddata), annot=dannot))}, error = function(e) {NA})
+      tmp1 = tryCatch({as.matrix(lncRNA12model(data=t(ddata), annot=dannot, do.mapping = do.mapping))}, error = function(e) {NA})
       if (is.na(tmp1)) {
         cat("Failed ... Check your data for lncRNA12 signatures \n")
         tmp1 = rep(NA, ncol(data))
@@ -120,7 +122,7 @@ CancerPrognosis_LncRNAData <- function(data,methods)
     ## 5. lncRNA6model
     if ("lncRNA6" %in% methods) {
       cat("Processing on lncRNA6 model.... \n")
-      tmp1 = tryCatch({as.matrix(lncRNA6model(data=t(ddata), annot=dannot))}, error = function(e) {NA})
+      tmp1 = tryCatch({as.matrix(lncRNA6model(data=t(ddata), annot=dannot, do.mapping = do.mapping))}, error = function(e) {NA})
       if (is.na(tmp1)) {
         cat("Failed ... Check your data for lncRNA6 signatures \n")
         tmp1 = rep(NA, ncol(data))
@@ -132,7 +134,7 @@ CancerPrognosis_LncRNAData <- function(data,methods)
     ## 6. lncRNA5model
     if ("lncRNA5" %in% methods) {
       cat("Processing on lncRNA5 model.... \n")
-      tmp1 = tryCatch({as.matrix(lncRNA5model(data=t(ddata), annot=dannot))}, error = function(e) {NA})
+      tmp1 = tryCatch({as.matrix(lncRNA5model(data=t(ddata), annot=dannot, do.mapping = do.mapping))}, error = function(e) {NA})
       if (is.na(tmp1)) {
         cat("Failed ... Check your data for lncRNA5 signatures \n")
         tmp1 = rep(NA, ncol(data))

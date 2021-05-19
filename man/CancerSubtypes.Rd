@@ -17,7 +17,8 @@ CancerSubtypes(
 
 \item{omics}{The types of data, "mRNA" or "miRNA" or "multiomics".}
 
-\item{methods}{A set of methods to be performed in the 11 methods: "PAM50","IntClust","CC","CNMF","iCluster","SNF","SNF-CC","WSNF","CIMLR","PINS","NEMO".}
+\item{methods}{A set of methods to be performed in the 11 methods: "PAM50","IntClust","CC","CNMF",
+"iCluster","SNF","SNF-CC","WSNF","CIMLR","PINS","NEMO".}
 
 \item{fileFolder}{A file folder name provided for saving results.}
 
@@ -27,8 +28,9 @@ CancerSubtypes(
 a list contains timeTable matrix, silTable matrix, and pvalueTable matrix
 }
 \description{
-CancerSubtypes to compute the running time, the average Silhouette score, and the p-value of Logrank test for mRNA, miRNA or multiomics data based on existing 11 methods: 
-           "PAM50","IntClust","CC","CNMF","iCluster","SNF","SNF-CC","WSNF","CIMLR","PINS","NEMO"
+CancerSubtypes to compute the running time, the average Silhouette score, and the p-value of 
+Logrank test for mRNA, miRNA or multiomics data based on existing 11 methods: 
+"PAM50","IntClust","CC","CNMF","iCluster","SNF","SNF-CC","WSNF","CIMLR","PINS","NEMO"
 }
 \examples{
 \dontrun{
