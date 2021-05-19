@@ -62,6 +62,6 @@ library(breastCancerNKI)
 
 Please download the GSE6532 dataset [here](https://github.com/XiaomeiLi1/CancerSubtypesPrognosis/releases/tag/V1.0)
 
-Please find the other datasets employed in our paper in the folder [data](https://github.com/XiaomeiLi1/CancerSubtypesPrognosis/tree/master/data)
-
 Please download the GSE12276,GSE19615,GSE20685,GSE20711,GSE21653,GSE42568 and GSE9195 datasets from the [GEO](https://www.ncbi.nlm.nih.gov/geo/) database.
+
+Please find the other datasets employed in our paper in the folder [data](https://github.com/XiaomeiLi1/CancerSubtypesPrognosis/tree/master/data)
